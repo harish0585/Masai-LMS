@@ -1,8 +1,26 @@
 .nav {
     display: flex;
+    /* border: 2px solid green; */
+    border-bottom: 0.5px solid #e5e7eb;
+}
+
+.mainBox1 {
+    display: flex;
     /* gap: 70px; */
+    /* border: 2px solid red; */
     height: 80px;
-    width: 70%;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.mainBox2 {
+    display: flex;
+    /* gap: 70px; */
+    /* border: 2px solid red; */
+    height: 80px;
+    width: 10%;
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -10,15 +28,18 @@
 
 .box {
     /* border: 2px solid black; */
-    height: 50px;
-    width: 150px;
+    height: 80px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box:hover{
-    border-bottom: 0.5px solid gray; 
+    border-bottom: 2px solid gray; 
 }
 
 img {
-    height: 70px;
+    height: 50px;
     width: 150px;
 }
