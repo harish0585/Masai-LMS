@@ -4,7 +4,7 @@ export const Discussions = () => {
     return (
         <>
         <Navbar />
-        <div>Discussions</div>
+        <div>Discussions</div> 
         </>
     )
 }
