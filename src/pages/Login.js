@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
-import {useHistory, Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { loginInitiate } from '../redux/actions';
 
 export const Login = () => {
 
@@ -11,8 +12,27 @@ export const Login = () => {
 
     const {email, password} = state;
 
-    const handleSubmit = () => {
+    const { currentUser }  = useSelector(state => state.user);
 
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(currentUser)
+        {
+            navigate("/")
+        }
+    }, [currentUser, navigate])
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if(!email || !password)
+      {
+        return;
+      }
+     dispatch(loginInitiate(email, password))
+     setState({email: "", password: "" })
     }
 
     const handleGoogleSignIn = () => {
@@ -23,8 +43,9 @@ export const Login = () => {
 
     }
 
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        let {name, value} = e.target;
+        setState({...state, [name]: value}) 
     }
 
   return (

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
-import {useHistory, Link} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
+import { registerInitiate } from '../redux/actions';
 
 export const Register = () => {
 
@@ -11,14 +12,34 @@ export const Register = () => {
         passwordConfirm: ""
     });
 
+    const { currentUser }  = useSelector(state => state.user);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(currentUser)
+        {
+            navigate("/")
+        }
+    }, [currentUser, navigate])
+
+    const dispatch = useDispatch();
+
     const {displayName, email, password, passwordConfirm} = state;
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      if(password !== passwordConfirm)
+      {
+        return;
+      }
+      dispatch(registerInitiate(email, password, displayName));
+      setState({email:"", password: "", displayName:"", passwordConfirm:""})
     }
 
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        let {name, value} = e.target;
+        setState({...state, [name]: value}) 
     }
 
   return (

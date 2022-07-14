@@ -1,7 +1,7 @@
-import firebase from "firebase/app";
-import "firebase/auth";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyA-CC8l24TtFPefh-PO8Y8l7FlMCIXU7pw",
     authDomain: "masai-lms-dc74e.firebaseapp.com",
     projectId: "masai-lms-dc74e",
@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
-const googleAuthProvider = new firebase.auth.googleAuthProvider();
-const facebookauthProvider = new firebase.auth.facebookauthProvider();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+//const facebookauthProvider = new firebase.auth.FacebookauthProvider();
 
-export { auth, googleAuthProvider, facebookauthProvider}
+export { auth, googleAuthProvider}
