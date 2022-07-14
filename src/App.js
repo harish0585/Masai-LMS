@@ -26,13 +26,13 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         {/* <Route exact path="/" element={<Masai />} /> */}
-        <Route path="/assignments" element={<Assignments/>} />
-        <Route path="/discussions" element={<Discussions/>} />
-        <Route path="/electives" element={<Electives />} />
-        <Route path="/lectures" element={<Lectures />} />
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/quizzes" element={<Quizzes />} />
-        <Route path="/tickets" element={<Tickets />} />
+        <Route path="/assignments" element={<UserRoute><Assignments/></UserRoute>} />
+        <Route path="/discussions" element={<UserRoute><Discussions/></UserRoute>} />
+        <Route path="/electives" element={<UserRoute><Electives /></UserRoute>} />
+        <Route path="/lectures" element={<UserRoute><Lectures /></UserRoute>} />
+        <Route path="/notifications" element={<UserRoute><Notifications /></UserRoute>} />
+        <Route path="/quizzes" element={<UserRoute><Quizzes /></UserRoute>} />
+        <Route path="/tickets" element={<UserRoute><Tickets /></UserRoute>} />
       </Routes>
     </div>
   );

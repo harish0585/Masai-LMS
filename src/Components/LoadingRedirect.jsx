@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import React from 'react'
 
 const LoadingRedirect = () => {
-    const [count, setCount] = useState(2);
+    const [count, setCount] = useState(3);
     
     const navigate = useNavigate();
 
@@ -16,7 +16,8 @@ const LoadingRedirect = () => {
     }, [count, navigate])
 
   return (
-    <div>Redirecting you in {count} seconds</div>
+    <h2> Please Login...
+      Redirecting you to Login Page in {count} seconds</h2>
   )
 }
 

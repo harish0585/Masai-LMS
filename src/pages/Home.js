@@ -26,7 +26,8 @@ export const Home = () => {
     <div>
         <Navbar/>
         <br/>
-        <button className='btn btn-danger' onClick={handleAuth}>Logout</button>
+        {/* <button className='btn btn-danger' onClick={handleAuth}>Logout</button> */}
+        <h1>Welcome to Masai School</h1>
     </div>
   )
 }
